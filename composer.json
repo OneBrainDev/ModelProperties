@@ -1,0 +1,70 @@
+{
+    "name": "joecianflone/modelproperties",
+    "description": "Make the DX of Eloquent Models better",
+    "version": "0.1.0",
+    "keywords": [
+        "laravel",
+        "models",
+        "model properties",
+        "eloquent"
+    ],
+    "homepage": "https://github.com/joecianflone/modelproperties",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joe Cianflone",
+            "email": "JoeCianflone@users.noreply.github.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "crell/attributeutils": "^1.0.0",
+        "illuminate/config": "*",
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.8",
+        "laravel/pint": "^1.13",
+        "nunomaduro/collision": "^7.10",
+        "orchestra/testbench": "^8.21",
+        "pestphp/pest": "^2.33",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "ramsey/conventional-commits": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "JoeCianflone\\ModelProperties\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JoeCianflone\\ModelProperties\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "static": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JoeCianflone\\ModelProperties\\ModelPropertiesServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
