@@ -1,0 +1,7 @@
+"breaking-change": bc/*
+"feat": feat/*
+"fix": fix/*
+"chore": ["chore/*", "test/*"]
+"update": ["update/*", "refactor/*"]
+"build": ["build/*", "ci/*"]
+"security": ["sec/*", "dependabot"]
