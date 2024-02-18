@@ -1,0 +1,19 @@
+name: Pull Request Lint and Label
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+jobs:
+  pr-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Adds Label to PR
+        uses: TimonVS/pr-labeler-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Lint pull request title
+        uses: jef/conventional-commits-pr-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
