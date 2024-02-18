@@ -1,34 +1,34 @@
 categories:
   - labels:
-      - "changelog:feat"
+      - "feat"
     title: "New Features"
   - labels:
-      - "changelog:fix"
+      - "fix"
     title: "Bug Fixes"
   - labels:
-      - "changelog:update"
+      - "update"
     title: Updates
   - labels:
-      - "changelog:chore"
-      - "changelog:build"
-      - "changelog:refactor"
-      - "changelog:test"
+      - "chore"
+      - "build"
+      - "refactor"
+      - "test"
     title: Chores
   - labels:
       - security
-      - "changelog:security"
+      - "security"
     title: "Security Related"
 
 include-labels:
-  - "changelog:feat"
-  - "changelog:fix"
-  - "changelog:update"
-  - "changelog:chore"
-  - "changelog:build"
-  - "changelog:refactor"
-  - "changelog:test"
+  - "feat"
+  - "fix"
+  - "update"
+  - "chore"
+  - "build"
+  - "refactor"
+  - "test"
   - security
-  - "changelog:security"
+  - "security"
 version-resolver:
   major:
     labels:
