@@ -1,7 +1,7 @@
-'changelog:breaking-change': bc/*
-'changelog:feat': feat/*
-'changelog:fix': fix/*
-'changelog:chore': ['chore/*', 'test/*']
-'changelog:update': ['update/*', 'refactor/*']
-'changelog:build': ['build/*', 'ci/*']
-'changelog:security': ['sec/*', 'dependabot']
+"breaking-change": bc/*
+"feat": feat/*
+"fix": fix/*
+"chore": ["chore/*", "test/*"]
+"update": ["update/*", "refactor/*"]
+"build": ["build/*", "ci/*"]
+"security": ["sec/*", "dependabot"]
