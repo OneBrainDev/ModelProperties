@@ -1,0 +1,76 @@
+name: "Continuous Integration"
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test-with-pest:
+    name: "Test with Pest"
+
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      matrix:
+        dependencies:
+          - "lowest"
+          - "highest"
+          - "locked"
+        php-version:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+        operating-system:
+          - "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@2.29.0"
+        with:
+          php-version: "${{ matrix.php-version }}"
+
+      - name: Install PHP Dependencies with Composer
+        uses: ramsey/composer-install@2.2.0
+
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+
+      - name: "Pest Tests"
+        run: "vendor/bin/pest"
+
+  static-analysis-phpstan:
+    name: "Static Analysis with PHPStan"
+
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      matrix:
+        dependencies:
+          - "locked"
+        php-version:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+        operating-system:
+          - "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@2.29.0"
+        with:
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Install dependencies"
+        uses: "ramsey/composer-install@2.2.0"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan --error-format=github
