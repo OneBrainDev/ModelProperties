@@ -27,7 +27,6 @@ include-labels:
   - "build"
   - "refactor"
   - "test"
-  - security
   - "security"
 version-resolver:
   major:
