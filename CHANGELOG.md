@@ -2,6 +2,17 @@
 
 All notable changes to `ModelProperties` will be documented in this file.
 
+## v2.0.0 - 2025-02-26
+
+### Changes
+
+* BC: remove support for PHP 8.1 (#25) @JoeCianflone
+* add: support for Laravel 12  (#25) @JoeCianflone
+
+### Chores
+
+* chore: remove old test runner and add in something better (#7) @JoeCianflone
+
 ## v1.0.0 - 2024-02-19
 
 ### Changes
